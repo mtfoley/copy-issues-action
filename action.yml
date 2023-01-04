@@ -1,6 +1,10 @@
 name: 'Wait'
 description: 'Wait a designated number of milliseconds'
 inputs:
+  token:
+    description: GitHub Token
+    required: true
+    default: ${{ github.token }}
   milliseconds:  # id of input
     description: 'number of milliseconds to wait'
     required: true
