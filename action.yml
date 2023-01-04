@@ -1,17 +1,16 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'copy-issues-action'
+description: 'Copy Issues'
 inputs:
   token:
     description: GitHub Token
     required: true
     default: ${{ github.token }}
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  source_repo:
+    description: >
+      Repo to copy open issues from. If left blank, the action will check whether the
+      repo that this action is running on is a fork or is generated from a template.
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps
-    description: 'The current time after waiting'
+    default: ""
 runs:
   using: 'node16'
   main: 'dist/index.js'
